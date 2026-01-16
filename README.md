@@ -1,6 +1,6 @@
-# Metlink departure display
+# Metlink Departures Display
 
-Tiny CLI + “LED sign” server to show the next two buses for a Metlink stop.
+Glanceable “LED sign” display (web + CLI) for Metlink bus departures in Wellington.
 
 ## Setup
 
@@ -16,6 +16,15 @@ Tiny CLI + “LED sign” server to show the next two buses for a Metlink stop.
 2. Make scripts executable (once):
 
    - `chmod +x bus-times bus_times.py`
+
+## Quickstart
+
+- Run the web sign:
+  - `python3 bus_sign_server.py`
+  - Open `http://localhost:8765/`
+
+- Run the terminal sign:
+  - `./bus-times`
 
 ## Usage
 
@@ -60,3 +69,11 @@ Two simple options:
 - Enable:
   - `sudo systemctl daemon-reload`
   - `sudo systemctl enable --now homebustimes`
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+MIT — see [LICENSE](LICENSE).
