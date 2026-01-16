@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-exec "$(dirname "$0")/bus_times.py" "$@"
