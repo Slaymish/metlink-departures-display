@@ -1,4 +1,4 @@
-# HomeBusTimes
+# Metlink departure display
 
 Tiny CLI + “LED sign” server to show the next two buses for a Metlink stop.
 
