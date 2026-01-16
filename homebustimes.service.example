@@ -1,0 +1,26 @@
+# Example systemd unit for running the bus sign server 24/7
+#
+# Copy to: /etc/systemd/system/homebustimes.service
+# Then edit paths + user to match your device.
+#
+# Commands:
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now homebustimes
+#   sudo journalctl -u homebustimes -f
+
+[Unit]
+Description=HomeBusTimes (Metlink bus sign)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/HomeBusTimes
+EnvironmentFile=/home/pi/HomeBusTimes/.env
+ExecStart=/usr/bin/python3 /home/pi/HomeBusTimes/bus_sign_server.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
